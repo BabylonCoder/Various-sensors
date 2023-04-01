@@ -8,5 +8,7 @@ You can read the temperature on the serial monitor."
 
 B - KY-008 650nm 5V Laser Module :/ Arduino Uno   
 Digital pin 2
+
+C- 3-color full-color LED SMD modules KY-009, flash each colour for a 2 sec, please ensure GND is connected.
     
  
