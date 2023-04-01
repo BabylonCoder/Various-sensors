@@ -11,4 +11,4 @@ Digital pin 2
 
 C- 3-color full-color LED SMD modules KY-009, flash each colour for a 2 sec, please ensure GND is connected.
     
- 
+D- The KY-027 Magic Light Cup module is a set of two boards. Each one has a LED and a mercury tilt switch.Using PWM to drive the LEDs on each module, you can achieve the effect of light being “magically” transferred from one module to the other when tilting them, similar to pouring water from one cup to the other, hence the name. (please search on google for wiring).
