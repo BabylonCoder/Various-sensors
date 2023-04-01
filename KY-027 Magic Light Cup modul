@@ -1,0 +1,36 @@
+const int ledPin1 = 9;    // PWM pin for LED 1
+const int ledPin2 = 10;   // PWM pin for LED 2
+const int tiltPin1 = 2;   // digital pin for tilt switch 1
+const int tiltPin2 = 3;   // digital pin for tilt switch 2
+
+void setup() {
+  pinMode(ledPin1, OUTPUT);
+  pinMode(ledPin2, OUTPUT);
+  pinMode(tiltPin1, INPUT_PULLUP);
+  pinMode(tiltPin2, INPUT_PULLUP);
+}
+
+void loop() {
+  // Check the state of the tilt switches
+  int tiltState1 = digitalRead(tiltPin1);
+  int tiltState2 = digitalRead(tiltPin2);
+
+  // If the first module is tilted, transfer the light to the second module
+  if (tiltState1 == LOW) {
+    for (int brightness = 0; brightness <= 255; brightness++) {
+      analogWrite(ledPin1, 255 - brightness);
+      analogWrite(ledPin2, brightness);
+      delay(10);
+    }
+  }
+
+  // If the second module is tilted, transfer the light to the first module
+  if (tiltState2 == LOW) {
+    for (int brightness = 0; brightness <= 255; brightness++) {
+      analogWrite(ledPin1, brightness);
+      analogWrite(ledPin2, 255 - brightness);
+      delay(10);
+    }
+  }
+}
+
